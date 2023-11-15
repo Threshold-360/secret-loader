@@ -4,8 +4,8 @@
  * @file This is what gets run when a user npx's this module
  */
 
-import path from 'path';
-import fetchSecrets from './lib/fetch-secrets.js';
+const path = require('path');
+const fetchSecrets = require('./lib/fetch-secrets.js');
 
 // Get root path from arguments or use current working directory
 let root = process.cwd();

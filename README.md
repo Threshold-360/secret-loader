@@ -3,8 +3,6 @@
 This is a custom npm module designed to allow the Threshold 360 team to dynamically import secrets into various environments from a secure store.
 This module has been kept public to allow for maximum flexibility in our stack, so there should not be any private information found here.
 
-# How to use this package
-
 This package has two main functions:
 
 - The ability to fetch secrets so that they can be used locally in your environment
@@ -12,6 +10,12 @@ This package has two main functions:
 
 It's worth noting that the second function can only really be used in Node.js projects.
 If you are manually fetching the secrets and using them in another kind of project, you will be responsible for parsing them correctly.
+
+# How to use this package
+
+This package is stored in the GitHub registry, so you can install it using this command:
+
+`npm i github:Threshold-360/secret-loader`
 
 ## Prerequisite: Bitwarden authentication
 
@@ -45,12 +49,14 @@ TODO provide example
 
 ### From the command line
 
-From another project: (TODO verify this is how it works)
+From another project:
 ```
 npx @threshold-360/secret-loader
 ```
 
-From within this project (for testing purposes)
+You can technically omit `@threshold-360/`, but it's safer to leave it in.
+
+If you want to test this command locally from within this project, you can run it using the following:
 ```
 npx .
 ```

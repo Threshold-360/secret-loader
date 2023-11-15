@@ -4,6 +4,9 @@
   "main": "index.js",
   "bin": "bin.js",
   "type": "module",
+  "repository": {
+    "url": "https://github.com/Threshold-360/secret-loader.git"
+  },
   "dependencies": {
     "@bitwarden/cli": "^2023.10.0",
     "dotenv": "^16.3.1",

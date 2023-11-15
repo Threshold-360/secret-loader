@@ -8,18 +8,18 @@ This module has been kept public to allow for maximum flexibility in our stack, 
 This package has two main functions:
 
 - The ability to fetch secrets so that they can be used locally in your environment
-- An importable module that parses the secret files so that you can use secret values much easier in your code
+- An importable module that loads variables from secret files so that you can use them in your code
 
-It is worth noting that the second function can only really be used in Node.js projects.
-If you are manually fetching the secrets and using them in another kind of project, you will be responsible for parsing them properly.
+It's worth noting that the second function can only really be used in Node.js projects.
+If you are manually fetching the secrets and using them in another kind of project, you will be responsible for parsing them correctly.
 
-## Authenticating with Bitwarden
+## Prerequisite: Bitwarden authentication
 
-### From you local development environment
+### Authenticating from you local development environment
 
 Obtain a recent version of `.threshold-secrets.json` and store it in your home directory (`~/.threshold-secrets.json`).
 
-### From a deployed instance
+### Authenticating from a deployed instance
 
 Make sure you have configured the following environment variables for the deployed instance:
 
@@ -27,17 +27,47 @@ Make sure you have configured the following environment variables for the deploy
 - `TH_BW_CLIENT_SECRET`
 - `TH_BW_PASSWORD`
 
-You can also find these values in `.threshold-secrets.json`.
+You can steal these values from `.threshold-secrets.json`.
+
+This package will also allow for using the default Bitwarden environment variables if necessary:
+
+- `BW_CLIENTID`
+- `BW_CLIENTSECRET`
+- `BW_PASSWORD`
+
+But it is recommended to use the Threshold specific ones.
+
+## Example usage
+
+### From a Node.js application
+
+TODO provide example
+
+### From the command line
+
+From another project: (TODO verify this is how it works)
+```
+npx @threshold-360/secret-loader
+```
+
+From within this project (for testing purposes)
+```
+npx .
+```
+
+Note: This command only loads the secret files. You still need to use `loadSecrets` in your scripts (or parse them yourself in non Node.js projects).
 
 # How to update this package
 
-In order to publish new versions of this package you will need to be authenticated with the GitHub npm registry for the Threshold 360 organization.
+In order to publish new versions of this package you will need to generate your own personal access token (legacy), and have the appropriate authorization within the Threshold 360 organization.
+That will allow you to access the GitHub npm registry for the org.
+
 It is recommended that you set up a `~/.npmrc` (home directory) file with the following contents in order to authenticate with the GitHub npm registry.
 
 ```
 //npm.pkg.github.com/:_authToken=YOUR_ACCESS_TOKEN
 ```
 
-You can find more details about how to create an access token on GitHub (here)[https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens].
+You can find more details about how to create an access token on GitHub [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-Once you have successfully set up your credentials, you can simply run `npm publish` to create a new version (be sure to update the version in package.json first).
+Once you have successfully set up your credentials, and you are ready to publish, simply run `npm publish`. Be sure to update the version in package.json first!

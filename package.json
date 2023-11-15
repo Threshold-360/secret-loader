@@ -1,6 +1,6 @@
 {
   "name": "@threshold-360/secret-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "exports": "./index.js",
   "bin": "bin.js",
   "type": "module",

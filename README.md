@@ -15,7 +15,9 @@ If you are manually fetching the secrets and using them in another kind of proje
 
 This package is stored in the GitHub npm registry, so you can install it using this command:
 
-`npm i github:Threshold-360/secret-loader`
+```
+npm i github:Threshold-360/secret-loader
+```
 
 ## Prerequisite: Bitwarden authentication
 

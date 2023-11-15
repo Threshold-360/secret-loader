@@ -91,6 +91,19 @@ npx .
 
 Note: This command only loads the secret files. You still need to use `loadSecrets` in your scripts (or parse them yourself in non Node.js projects).
 
+Successful execution of this command should produce secret files in the root of your project like so:
+
+```
+project-root/
+├── .threshold-secrets/
+│   ├── .gitignore
+│   ├── dev-secrets.env
+│   ├── secrets.env
+│   ├── staging-secrets.env
+│   └── test-secrets.env
+├── ... other project files
+```
+
 # How to update this package
 
 In order to publish new versions of this package you will need to generate your own personal access token (legacy), and have the appropriate authorization within the Threshold 360 organization.

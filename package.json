@@ -1,0 +1,10 @@
+{
+  "name": "@threshold-360/secret-loader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm publish"
+  },
+  "author": "GibsDev",
+  "description": ""
+}

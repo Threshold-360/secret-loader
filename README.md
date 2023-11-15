@@ -10,15 +10,6 @@ This package has two main functions:
 
 It's worth noting that the second function can only be directly used in Node.js projects.
 
-If you are manually fetching the secrets and using them in another kind of project, you will be responsible for parsing them correctly.
-For ruby implementations, you will probably want to use a gem like [this](https://github.com/bkeepers/dotenv) to process the secret files.
-Pay close attention to load order! Remember the production values are inherited to all environments, and specific environments are used to override them.
-It looks like it will look something like this since it's the first definition of a variable that sticks, and we want the environment specific to "override" the production:
-
-```ruby
-Dotenv.load('<specific-env>secrets.env', 'secrets.env')
-```
-
 # How to use this package
 
 This package is stored in the GitHub npm registry, so you can install it using this command:
@@ -103,6 +94,21 @@ project-root/
 │   └── test-secrets.env
 ├── ... other project files
 ```
+
+## Using from other types of projects
+
+If you are manually fetching the secrets and using them in another kind of project, you will be responsible for parsing them correctly.
+
+For ruby implementations, you will probably want to use a gem like [this](https://github.com/bkeepers/dotenv) to process the secret files.
+
+Pay close attention to load order!
+The production values are supposed to be inherited to all environments, and specific environments are used to override them.
+It looks like the order of this function matters, and we would want to load it in this order so that the specific environment "overrides" the production values:
+
+```ruby
+Dotenv.load('<specific-env>secrets.env', 'secrets.env')
+```
+
 
 # How to update this package
 

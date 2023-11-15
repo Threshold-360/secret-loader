@@ -8,8 +8,16 @@ This package has two main functions:
 - The ability to fetch secrets so that they can be used locally in your environment
 - An importable module that loads variables from secret files so that you can use them in your code
 
-It's worth noting that the second function can only really be used in Node.js projects.
+It's worth noting that the second function can only be directly used in Node.js projects.
+
 If you are manually fetching the secrets and using them in another kind of project, you will be responsible for parsing them correctly.
+For ruby implementations, you will probably want to use a gem like [this](https://github.com/bkeepers/dotenv) to process the secret files.
+Pay close attention to load order! Remember the production values are inherited to all environments, and specific environments are used to override them.
+It looks like it will look something like this since it's the first definition of a variable that sticks, and we want the environment specific to "override" the production:
+
+```ruby
+Dotenv.load('<specific-env>secrets.env', 'secrets.env')
+```
 
 # How to use this package
 

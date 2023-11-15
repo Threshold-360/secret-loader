@@ -29,6 +29,7 @@ npm i github:Threshold-360/secret-loader#911fc51750883feed661412cbdd572780bf1b73
 ### Authenticating from you local development environment
 
 Obtain a recent version of `.threshold-secrets.json` and store it in your home directory (`~/.threshold-secrets.json`).
+This should go in your User folder if you are on Windows.
 
 ### Authenticating from a deployed instance
 

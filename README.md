@@ -27,6 +27,12 @@ This package is stored in the GitHub npm registry, so you can install it using t
 npm i github:Threshold-360/secret-loader
 ```
 
+To use a specific commit or tag, make sure to append the tag after an `#` symbol:
+```
+npm i github:Threshold-360/secret-loader#v1.0.6
+npm i github:Threshold-360/secret-loader#911fc51750883feed661412cbdd572780bf1b738
+```
+
 ## Prerequisite: Bitwarden authentication
 
 ### Authenticating from you local development environment
@@ -55,7 +61,19 @@ But it is recommended to use the Threshold specific ones.
 
 ### From a Node.js application
 
-TODO provide example
+```javascript
+// Import
+const { loadSecrets } = require('@threshold-360/secret-loader');
+
+// environment could also be any of the following:
+// 'staging', 'development', 'testing', 'prod', 'stag', 'dev', 'test'
+let environment = 'production';
+// Load secrets into environment variables
+loadSecrets(environment);
+
+// Make use of variables in process.env
+console.log(process.env)
+```
 
 ### From the command line
 

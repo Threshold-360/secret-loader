@@ -1,9 +1,10 @@
 {
   "name": "@threshold-360/secret-loader",
   "version": "1.0.2",
-  "main": "index.js",
+  "exports": "./index.js",
   "bin": "bin.js",
   "type": "module",
+  "node": ">=16",
   "repository": {
     "url": "https://github.com/Threshold-360/secret-loader.git"
   },

@@ -49,6 +49,10 @@ This package will also allow for using the default Bitwarden environment variabl
 
 But it is recommended to use the Threshold specific ones.
 
+## Standard environment variable loading algorithm
+
+![implementation.svg](./implementation.svg)
+
 ## Example usage
 
 ### From a Node.js application
@@ -60,11 +64,17 @@ const { loadSecrets } = require('@threshold-360/secret-loader');
 // environment could also be any of the following:
 // 'staging', 'development', 'testing', 'prod', 'stag', 'dev', 'test'
 let environment = 'production';
+
 // Load secrets into environment variables
+// Overrides vars by default
 loadSecrets(environment);
+// But it can also be used without overriding existing vars
+loadSecrets(environment, false);
 
 // Make use of variables in process.env
-console.log(process.env)
+console.log(process.env);
+
+// NOTE: This is not a full implementation of the standard algorithm
 ```
 
 ### From the command line

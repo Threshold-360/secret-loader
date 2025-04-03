@@ -10,6 +10,8 @@ This package has two main functions:
 
 It's worth noting that the second function can only be directly used in Node.js projects.
 
+Bitwarden notes are limited to 1000 characters, so it was necessary to add the ability to load multiple files for default variables.
+
 # How to use this package
 
 This package is stored in the GitHub npm registry, so you can install it using this command:
